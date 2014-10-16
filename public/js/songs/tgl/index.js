@@ -18,7 +18,7 @@ module.exports = new Song([
     instrument: snare,
     notes: drum1,
     bps: baseTempo,
-    loop: 4
+    loop: 16
   }),
   new Track({
     instrument: bass,
