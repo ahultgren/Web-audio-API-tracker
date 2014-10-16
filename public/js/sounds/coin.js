@@ -16,11 +16,11 @@ var coin = new Wad({
   }
 });
 
-exports.play = function playCoin () {
-  coin.play();
+exports.play = function playCoin (options) {
+  coin.play(options);
   coin.play({
     detune: 500,
-    wait: 0.094
+    wait: 0.094 + (options && options.wait || 0)
   });
 
   setTimeout(function () {

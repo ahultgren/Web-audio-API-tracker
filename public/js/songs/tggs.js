@@ -1,15 +1,14 @@
 'use strict';
 
+var Song = require('../song');
+var Track = require('../track');
 var sid = require('../sounds/sid');
-var tempo = 4; // bps
-var lead = require('../tracks/tggs.lead.txt');
-var notes = lead.trim().split('\n');
+var lead = require('../tracks/tggs.lead.txt').trim().split('\n');
 
-exports.play = function () {
-  notes.forEach(function (note, i) {
-    sid.play({
-      pitch: note,
-      wait: i * 1/tempo
-    });
-  });
-};
+module.exports = new Song([
+  new Track({
+    instrument: sid,
+    notes: lead,
+    bps: 4
+  })
+]);
