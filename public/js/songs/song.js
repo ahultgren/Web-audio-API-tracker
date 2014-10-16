@@ -12,7 +12,8 @@ Song.prototype.play = function() {
         if(note !== '') {
           track.instrument.play({
             pitch: note,
-            wait: i * 1/track.bps + (loop * track.notes.length * 1/track.bps)
+            wait: i * 1/track.bps + (loop * track.notes.length * 1/track.bps),
+            volume: track.volume
           });
         }
       });
