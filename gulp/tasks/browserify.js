@@ -2,6 +2,7 @@
 
 var gulp = require("gulp"),
     browserify = require("browserify"),
+    stringify = require("stringify"),
     jshint = require("gulp-jshint"),
     uglify = require("gulp-uglify"),
     source = require("vinyl-source-stream"),
@@ -18,6 +19,7 @@ gulp.task("browserify", [ "jshint" ], function() {
             path.join(config.root, "js", "main.js"),
             { debug: true }
         )
+        .transform(stringify())
         .bundle()
         .on("error", handleErrors.warning)
         .pipe(mold.transformSourcesRelativeTo(path.join(config.root, "js")));
