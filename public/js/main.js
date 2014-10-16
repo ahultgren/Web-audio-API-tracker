@@ -16,11 +16,7 @@ document.getElementById('play-laser').addEventListener('mousedown', function () 
 }, false);
 
 document.getElementById('play-sid').addEventListener('mousedown', function () {
-  sid.play({
-    env: {
-      decay: 1
-    }
-  });
+  sid.play();
 }, false);
 
 document.getElementById('play-song').addEventListener('mousedown', function () {

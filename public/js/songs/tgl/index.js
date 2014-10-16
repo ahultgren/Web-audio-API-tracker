@@ -8,8 +8,8 @@ var flute = require('../../sounds/sid');
 var snare = new Wad(Wad.presets.hiHatClosed);
 
 var drum1 = require('./snare.txt').split('\n');
-var bassLine = require('./bass.txt').trim().split('\n');
-var lead = require('./lead.txt').trim().split('\n');
+var bassLine = (require('./bass.txt') + require('./bass2.txt')).trim().split('\n');
+var lead = (require('./lead.txt') + require('./lead2.txt')).split('\n');
 
 var baseTempo = 4*72/60;
 
